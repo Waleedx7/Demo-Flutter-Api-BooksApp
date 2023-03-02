@@ -10,6 +10,33 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              child: Text("Sign in please"),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: const Text("Signin"),
+              trailing: const Icon(Icons.login),
+              onTap: () {
+                GoRouter.of(context).push('/signin');
+              },
+            ),
+            ListTile(
+              title: const Text("Signup"),
+              trailing: const Icon(Icons.how_to_reg),
+              onTap: () {
+                GoRouter.of(context).push('/signup');
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: const Text("Book Store"),
       ),
